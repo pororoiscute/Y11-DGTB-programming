@@ -19,7 +19,7 @@ quiz_data = [
         "choices": ["Shell Shock!", "Shell Shocked!", "Shell Shocking!", "Shell Shocker!"],
         "answer": "Shell Shocked!",
     },
-    {
+    {  
         "question": "How many trophies do you need to finish trophie road in brawl stars?",
         "choices": ["40000", "50000", "60000", "70000"],
         "answer": "70000",
@@ -80,7 +80,7 @@ quiz_data = [
         "answer": "40",
     },
     {
-        "question": "What brawler has the most in skins season 29?",
+        "question": "What brawler has the most skins in season 29?",
         "choices": ["El-primo", "Colt", "Shelly", "Spike"],
         "answer": "Colt",
     },
@@ -110,7 +110,7 @@ quiz_data = [
         "answer": "Veitnam",
     },
     {
-        "question": "How many hypercharges are there is brawl stars season 29?",
+        "question": "How many hypercharges are there in brawl stars season 29?",
         "choices": ["33", "42", "36", "37"],
         "answer": "37",
     },
@@ -124,5 +124,4 @@ quiz_data = [
         "choices": ["27", "30", "34", "41"],
         "answer": "30",
     },
-    # Add more questions here
 ]

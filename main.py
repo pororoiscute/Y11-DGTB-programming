@@ -8,8 +8,7 @@ from os import environ
 environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 import pygame, sys, time
 
-
-Button_sfx = pygame.mixer.Sound("Button sound effect.mp3")
+Button_sfx = pygame.mixer.Sound("Button sound effect.mp3") 
 
 pygame.mixer.init
     
@@ -17,11 +16,14 @@ pygame.mixer.init
 music = pygame.mixer.music.load('Brawl Stars Music- MenuLobby Extended.mp3')
 pygame.mixer.music.play(-1)
 
+
 # Function to display the current question and choices
 def show_question():
     # Get the current question from the quiz_data list
     question = quiz_data[current_question]
     qs_label.config(text=question["question"])
+
+
 
     # Display the choices on the buttons
     choices = question["choices"]
@@ -47,7 +49,7 @@ def check_answer(choice):
         feedback_label.config(text="Correct!", foreground="green")
         Button_sfx.play()
     else:
-        feedback_label.config(text="Failure! You are Gay!", foreground="red")
+        feedback_label.config(text="Incorrect!\nCorrect Answer: "+ question["answer"], foreground="red")
         Button_sfx.play()
     
     # Disable all choice buttons and enable the next button
@@ -65,7 +67,10 @@ def next_question():
         show_question()
     else:
         # If all questions have been answered, display the final score and end the quiz
-        if 21 <= score <= 25:
+        if score == 25:
+            messagebox.showinfo("Quiz Completed",
+                                "Quiz Completed! You probably searched it up or ur just smart!. Final score: {}/{}".format(score, len(quiz_data)))
+        elif 21 <= score <= 24:
             messagebox.showinfo("Quiz Completed",
                                 "Quiz Completed! You are a master of brawl stars (and not gay ;D)!. Final score: {}/{}".format(score, len(quiz_data)))
         elif 16 <= score <= 20:
@@ -79,14 +84,14 @@ def next_question():
                                 "Quiz Completed! Are you a noob?! Get better!. Final score: {}/{}".format(score, len(quiz_data)))
         elif 0 <= score <= 5:
             messagebox.showinfo("Quiz Completed",
-                                "Failure! Delete the game. Final score: {}/{}".format(score, len(quiz_data)))
+                                "Failure! Delete the game. (or maybe you just don't have the game). Final score: {}/{}".format(score, len(quiz_data)))
 
         root.destroy()
 
 # Create the main window
 root = tk.Tk()
-root.title("Brawl Stars Quiz App")
-root.geometry("600x500")
+root.title("Brawl stars quiz")
+root.geometry("700x600")
 style = Style(theme="flatly")
 
 # Configure the font size for the question and choice buttons

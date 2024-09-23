@@ -11,8 +11,6 @@ def show_question():
     question = quiz_data[current_question]
     qs_label.config(text=question["question"])
 
-
-
     # Display the choices on the buttons
     choices = question["choices"]
     for i in range(4): 
@@ -35,7 +33,6 @@ def check_answer(choice):
         score += 1
         score_label.config(text="Score: {}/{}".format(score, len(quiz_data)))
         feedback_label.config(text="Correct!", foreground="green")
-    
     else:
         feedback_label.config(text="Incorrect!\nCorrect Answer: "+ question["answer"], foreground="red")
     
@@ -68,10 +65,10 @@ def next_question():
                                 "Quiz Completed! You know the basics of this game. Nice. Final score: {}/{}".format(score, len(quiz_data)))
         elif 6 <= score <= 10:
             messagebox.showinfo("Quiz Completed",
-                                "Quiz Completed! Are you a noob?! Get better!. Final score: {}/{}".format(score, len(quiz_data)))
+                                "Quiz Completed! Maybe this is too hard... Final score: {}/{}".format(score, len(quiz_data)))
         elif 0 <= score <= 5:
             messagebox.showinfo("Quiz Completed",
-                                "Failure! Delete the game. (or maybe you just don't have the game). Final score: {}/{}".format(score, len(quiz_data)))
+                                "Bruh. Final score: {}/{}".format(score, len(quiz_data)))
 
         root.destroy()
 

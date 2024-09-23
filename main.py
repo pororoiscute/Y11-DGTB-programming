@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 from ttkbootstrap import Style
 from quiz_data import quiz_data
-from os import environ
 
 
 # Function to display the current question and choices

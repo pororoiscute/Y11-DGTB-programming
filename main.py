@@ -1,20 +1,8 @@
-import pygame
 import tkinter as tk
 from tkinter import messagebox, ttk
 from ttkbootstrap import Style
 from quiz_data import quiz_data
-pygame.init()
 from os import environ
-environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
-import pygame, sys, time
-
-Button_sfx = pygame.mixer.Sound("Button sound effect.mp3") 
-
-pygame.mixer.init
-    
-    
-music = pygame.mixer.music.load('Brawl Stars Music- MenuLobby Extended.mp3')
-pygame.mixer.music.play(-1)
 
 
 # Function to display the current question and choices
@@ -47,10 +35,9 @@ def check_answer(choice):
         score += 1
         score_label.config(text="Score: {}/{}".format(score, len(quiz_data)))
         feedback_label.config(text="Correct!", foreground="green")
-        Button_sfx.play()
+    
     else:
         feedback_label.config(text="Incorrect!\nCorrect Answer: "+ question["answer"], foreground="red")
-        Button_sfx.play()
     
     # Disable all choice buttons and enable the next button
     for button in choice_btns:

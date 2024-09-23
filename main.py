@@ -56,7 +56,7 @@ def next_question():
                                 "Quiz Completed! You probably searched it up or ur just smart!. Final score: {}/{}".format(score, len(quiz_data)))
         elif 21 <= score <= 24:
             messagebox.showinfo("Quiz Completed",
-                                "Quiz Completed! You are a master of brawl stars (and not gay ;D)!. Final score: {}/{}".format(score, len(quiz_data)))
+                                "Quiz Completed! You are a master of brawl stars!. Final score: {}/{}".format(score, len(quiz_data)))
         elif 16 <= score <= 20:
             messagebox.showinfo("Quiz Completed",
                                 "Quiz Completed! Come on! You can do better next time. Final score: {}/{}".format(score, len(quiz_data)))
